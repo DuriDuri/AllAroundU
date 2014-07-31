@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		68C02FE8198A118100D9D7D8 /* VONTrolleyData.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C02FE7198A118100D9D7D8 /* VONTrolleyData.m */; };
 		68CD1AA71989D582002673AD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68CD1AA61989D582002673AD /* Foundation.framework */; };
 		68CD1AA91989D582002673AD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68CD1AA81989D582002673AD /* CoreGraphics.framework */; };
 		68CD1AAB1989D582002673AD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68CD1AAA1989D582002673AD /* UIKit.framework */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		68C02FE6198A118100D9D7D8 /* VONTrolleyData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VONTrolleyData.h; sourceTree = "<group>"; };
+		68C02FE7198A118100D9D7D8 /* VONTrolleyData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VONTrolleyData.m; sourceTree = "<group>"; };
 		68CD1AA31989D582002673AD /* Union.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Union.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68CD1AA61989D582002673AD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		68CD1AA81989D582002673AD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -82,6 +85,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		68C02FE5198A116100D9D7D8 /* Trolley Data */ = {
+			isa = PBXGroup;
+			children = (
+				68C02FE6198A118100D9D7D8 /* VONTrolleyData.h */,
+				68C02FE7198A118100D9D7D8 /* VONTrolleyData.m */,
+			);
+			name = "Trolley Data";
+			sourceTree = "<group>";
+		};
 		68CD1A9A1989D582002673AD = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +127,7 @@
 		68CD1AAC1989D582002673AD /* Union */ = {
 			isa = PBXGroup;
 			children = (
+				68C02FE5198A116100D9D7D8 /* Trolley Data */,
 				68CD1AB51989D582002673AD /* VONAppDelegate.h */,
 				68CD1AB61989D582002673AD /* VONAppDelegate.m */,
 				68CD1AB81989D582002673AD /* Main.storyboard */,
@@ -257,6 +270,7 @@
 			files = (
 				68CD1AB71989D582002673AD /* VONAppDelegate.m in Sources */,
 				68CD1AB31989D582002673AD /* main.m in Sources */,
+				68C02FE8198A118100D9D7D8 /* VONTrolleyData.m in Sources */,
 				68CD1AC01989D582002673AD /* VONSecondViewController.m in Sources */,
 				68CD1ABD1989D582002673AD /* VONFirstViewController.m in Sources */,
 			);
@@ -463,6 +477,7 @@
 				68CD1ADA1989D583002673AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		68CD1ADB1989D583002673AD /* Build configuration list for PBXNativeTarget "UnionTests" */ = {
 			isa = XCConfigurationList;
@@ -471,6 +486,7 @@
 				68CD1ADD1989D583002673AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
