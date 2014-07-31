@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		68855EF1198A4FCA0006A37D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68855EF0198A4FCA0006A37D /* MapKit.framework */; };
 		68C02FE8198A118100D9D7D8 /* VONTrolleyData.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C02FE7198A118100D9D7D8 /* VONTrolleyData.m */; };
 		68CD1AA71989D582002673AD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68CD1AA61989D582002673AD /* Foundation.framework */; };
 		68CD1AA91989D582002673AD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68CD1AA81989D582002673AD /* CoreGraphics.framework */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		68855EF0198A4FCA0006A37D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		68C02FE6198A118100D9D7D8 /* VONTrolleyData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VONTrolleyData.h; sourceTree = "<group>"; };
 		68C02FE7198A118100D9D7D8 /* VONTrolleyData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VONTrolleyData.m; sourceTree = "<group>"; };
 		68CD1AA31989D582002673AD /* Union.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Union.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,6 +70,7 @@
 			files = (
 				68CD1AA91989D582002673AD /* CoreGraphics.framework in Frameworks */,
 				68CD1AAB1989D582002673AD /* UIKit.framework in Frameworks */,
+				68855EF1198A4FCA0006A37D /* MapKit.framework in Frameworks */,
 				68CD1AA71989D582002673AD /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -116,6 +119,7 @@
 		68CD1AA51989D582002673AD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				68855EF0198A4FCA0006A37D /* MapKit.framework */,
 				68CD1AA61989D582002673AD /* Foundation.framework */,
 				68CD1AA81989D582002673AD /* CoreGraphics.framework */,
 				68CD1AAA1989D582002673AD /* UIKit.framework */,
@@ -218,6 +222,13 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = Duri;
 				TargetAttributes = {
+					68CD1AA21989D582002673AD = {
+						SystemCapabilities = {
+							com.apple.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					68CD1AC61989D583002673AD = {
 						TestTargetID = 68CD1AA21989D582002673AD;
 					};

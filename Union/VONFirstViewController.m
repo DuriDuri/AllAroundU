@@ -11,6 +11,8 @@
 
 @interface VONFirstViewController ()
 
+- (IBAction)mapTerrainSC:(UISegmentedControl *)sender;
+
 
 
 @end
@@ -51,4 +53,19 @@
 
 
 
+- (IBAction)mapTerrainSC:(UISegmentedControl *)sender {
+    switch (((UISegmentedControl *) sender).selectedSegmentIndex) {
+        case 0:
+            self.trolleyMapView.mapType = MKMapTypeStandard;
+            break;
+        case 1:
+            self.trolleyMapView.mapType = MKMapTypeSatellite;
+            break;
+        case 2:
+            self.trolleyMapView.mapType = MKMapTypeHybrid;
+            break;
+        default:
+            break;
+    }
+}
 @end
