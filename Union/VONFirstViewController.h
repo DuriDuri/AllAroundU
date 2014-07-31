@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
-@interface VONFirstViewController : UIViewController
+@interface VONFirstViewController : UIViewController<MKMapViewDelegate>
+@property (weak, nonatomic) IBOutlet MKMapView *trolleyMapView;
 
 @end

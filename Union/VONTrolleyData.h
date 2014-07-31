@@ -7,16 +7,24 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <MapKit/MapKit.h>
+@interface VONTrolleyData : NSObject <MKAnnotation>{
 
-@interface VONTrolleyData : NSObject
+    NSString *title;
+    NSString *subtitle;
+    CLLocationCoordinate2D coordinate;
+    
+}
 
-@property (nonatomic) double longitude;
-@property (nonatomic) double latitude;
-@property (strong, nonatomic) NSDate *time;
+@property (nonatomic, assign) CLLocationCoordinate2D coordinate;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *subtitle;
 
 
--(float)getLongitude;
--(float)getLatitude;
--(NSDate *)getCurrentTime;
+
++(float)getLongitude;
++(float)getLatitude;
++(CLLocationCoordinate2D)getCoordinates;
++(NSDate *)getCurrentTime;
 
 @end
