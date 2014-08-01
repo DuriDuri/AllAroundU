@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "VONTrolleyData.h"
 
 @interface VONFirstViewController : UIViewController<MKMapViewDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *trolleyMapView;
-
+@property (strong, nonatomic) VONTrolleyData *trolley;
 @end
