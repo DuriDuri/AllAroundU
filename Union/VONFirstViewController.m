@@ -7,7 +7,8 @@
 //
 
 #import "VONFirstViewController.h"
-
+#import "VONDinnerMenu.h"
+#import "TFHpple.h"
 
 @interface VONFirstViewController ()
 
@@ -31,21 +32,35 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    ///// UNCOMMENT LATER
+    
     //Set Map Region
-    MKCoordinateRegion region = { {0.0, 0.0}, {0.0,0.0}};
-    region.center.latitude = 42.817743;
-    region.center.longitude = -73.930522;
-    region.span.latitudeDelta = 0.018f;
-    region.span.longitudeDelta = 0.018f;
+//    MKCoordinateRegion region = { {0.0, 0.0}, {0.0,0.0}};
+//    region.center.latitude = 42.817743;
+//    region.center.longitude = -73.930522;
+//    region.span.latitudeDelta = 0.018f;
+//    region.span.longitudeDelta = 0.018f;
+//
+//    [self.trolleyMapView setRegion:region animated:YES];
+//
+//    
+//    [self.trolleyMapView.delegate self];
+//    
+//    [self.trolleyMapView setShowsUserLocation:YES];
+    
+    NSURL *menuURL = [NSURL URLWithString:@"http://www.uniondining.com/WeeklyMenu_182.htm"];
+    NSData  * data      = [NSData dataWithContentsOfURL:menuURL];
+    
+    TFHpple * doc       = [[TFHpple alloc] initWithHTMLData:data];
 
-    [self.trolleyMapView setRegion:region animated:YES];
-
+    NSArray *elements  = [doc searchWithXPathQuery:@"//td[@id='tuesday']/table[@class='dayinner']/tr[@class='din']/td[@class='menuitem']/div[@class='menuitem']/span[@class='ul']"];
     
-    [self.trolleyMapView.delegate self];
-    
-    [self.trolleyMapView setShowsUserLocation:YES];
-    
-    
+   TFHppleElement * element = [elements objectAtIndex:0];
+    for (TFHppleElement *node in elements) {
+        NSLog(@"%@", [node text]);
+        NSLog(@"%@", [node attributes]);
+    }
+///div[@class='menuitem']/span[@class='ul']
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -88,6 +103,9 @@
 
 - (IBAction)updateUserLocationButtonPressed:(UIButton *)sender {
     self.trolleyMapView.showsUserLocation = YES;
+    CLLocationCoordinate2D userLocation = self.trolleyMapView.userLocation.coordinate;
+    MKCoordinateRegion userRegion = MKCoordinateRegionMakeWithDistance(userLocation, 500, 500);
+    [self.trolleyMapView setRegion:userRegion animated:YES];
 }
 
 
