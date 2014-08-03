@@ -7,7 +7,7 @@
 //
 
 #import "VONMenuTableViewController.h"
-
+#import "TFHpple.h"
 @interface VONMenuTableViewController ()
 
 @end
@@ -32,6 +32,8 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,28 +46,38 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
     return 0;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    static NSString *cellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
+        NSURL *menuURL = [NSURL URLWithString:@"http://www.uniondining.com/WeeklyMenu_182.htm"];
+    NSData  * data      = [NSData dataWithContentsOfURL:menuURL];
+    TFHpple * doc       = [[TFHpple alloc] initWithHTMLData:data];
+    NSArray *elements  = [doc searchWithXPathQuery:@"//td[@id='tuesday']/table[@class='dayinner']/tr[@class='din']/td[@class='menuitem']/div[@class='menuitem']/span[@class='ul']"];
     
+    TFHppleElement * element = [elements objectAtIndex:indexPath.row];
+
+//    for (TFHppleElement *node in elements) {
+//        NSLog(@"%@", [node text]);
+//        NSLog(@"%@", [node attributes]);
+//    }
+    cell.textLabel.text = [element text];
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.

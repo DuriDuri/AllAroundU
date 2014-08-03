@@ -35,31 +35,20 @@
     ///// UNCOMMENT LATER
     
     //Set Map Region
-//    MKCoordinateRegion region = { {0.0, 0.0}, {0.0,0.0}};
-//    region.center.latitude = 42.817743;
-//    region.center.longitude = -73.930522;
-//    region.span.latitudeDelta = 0.018f;
-//    region.span.longitudeDelta = 0.018f;
-//
-//    [self.trolleyMapView setRegion:region animated:YES];
-//
-//    
-//    [self.trolleyMapView.delegate self];
-//    
-//    [self.trolleyMapView setShowsUserLocation:YES];
-    
-    NSURL *menuURL = [NSURL URLWithString:@"http://www.uniondining.com/WeeklyMenu_182.htm"];
-    NSData  * data      = [NSData dataWithContentsOfURL:menuURL];
-    
-    TFHpple * doc       = [[TFHpple alloc] initWithHTMLData:data];
+    MKCoordinateRegion region = { {0.0, 0.0}, {0.0,0.0}};
+    region.center.latitude = 42.817743;
+    region.center.longitude = -73.930522;
+    region.span.latitudeDelta = 0.018f;
+    region.span.longitudeDelta = 0.018f;
 
-    NSArray *elements  = [doc searchWithXPathQuery:@"//td[@id='tuesday']/table[@class='dayinner']/tr[@class='din']/td[@class='menuitem']/div[@class='menuitem']/span[@class='ul']"];
+    [self.trolleyMapView setRegion:region animated:YES];
+
     
-   TFHppleElement * element = [elements objectAtIndex:0];
-    for (TFHppleElement *node in elements) {
-        NSLog(@"%@", [node text]);
-        NSLog(@"%@", [node attributes]);
-    }
+    [self.trolleyMapView.delegate self];
+    
+    [self.trolleyMapView setShowsUserLocation:YES];
+    
+
 ///div[@class='menuitem']/span[@class='ul']
 }
 
