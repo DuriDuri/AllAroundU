@@ -17,6 +17,8 @@
 		68855F08198B56E20006A37D /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 68855F04198B56E20006A37D /* TFHppleElement.m */; };
 		68855F09198B56E20006A37D /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 68855F06198B56E20006A37D /* XPathQuery.m */; };
 		68855F0D198B5C450006A37D /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 68855F0C198B5C450006A37D /* libxml2.dylib */; };
+		68A07507198EDD3400109348 /* VONMenuDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A07506198EDD3400109348 /* VONMenuDataProvider.m */; };
+		68A0750A198F07CD00109348 /* VONMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A07509198F07CD00109348 /* VONMenuViewController.m */; };
 		68C02FE8198A118100D9D7D8 /* VONTrolleyData.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C02FE7198A118100D9D7D8 /* VONTrolleyData.m */; };
 		68CD1AA71989D582002673AD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68CD1AA61989D582002673AD /* Foundation.framework */; };
 		68CD1AA91989D582002673AD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68CD1AA81989D582002673AD /* CoreGraphics.framework */; };
@@ -61,6 +63,10 @@
 		68855F06198B56E20006A37D /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
 		68855F0A198B57700006A37D /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
 		68855F0C198B5C450006A37D /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		68A07505198EDD3400109348 /* VONMenuDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VONMenuDataProvider.h; sourceTree = "<group>"; };
+		68A07506198EDD3400109348 /* VONMenuDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VONMenuDataProvider.m; sourceTree = "<group>"; };
+		68A07508198F07CD00109348 /* VONMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VONMenuViewController.h; sourceTree = "<group>"; };
+		68A07509198F07CD00109348 /* VONMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VONMenuViewController.m; sourceTree = "<group>"; };
 		68C02FE6198A118100D9D7D8 /* VONTrolleyData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VONTrolleyData.h; sourceTree = "<group>"; };
 		68C02FE7198A118100D9D7D8 /* VONTrolleyData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VONTrolleyData.m; sourceTree = "<group>"; };
 		68CD1AA31989D582002673AD /* Union.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Union.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,6 +123,8 @@
 			children = (
 				68855EFD198B55C10006A37D /* VONDinnerMenu.h */,
 				68855EFE198B55C10006A37D /* VONDinnerMenu.m */,
+				68A07505198EDD3400109348 /* VONMenuDataProvider.h */,
+				68A07506198EDD3400109348 /* VONMenuDataProvider.m */,
 			);
 			name = "Campus Menu";
 			sourceTree = "<group>";
@@ -189,6 +197,8 @@
 				68CD1ABC1989D582002673AD /* VONFirstViewController.m */,
 				68FE6C25198DC5FE006E05C8 /* VONMenuTableViewController.h */,
 				68FE6C26198DC5FE006E05C8 /* VONMenuTableViewController.m */,
+				68A07508198F07CD00109348 /* VONMenuViewController.h */,
+				68A07509198F07CD00109348 /* VONMenuViewController.m */,
 				68CD1AC11989D583002673AD /* Images.xcassets */,
 				68CD1AAD1989D582002673AD /* Supporting Files */,
 			);
@@ -340,12 +350,14 @@
 				68FE6C27198DC5FE006E05C8 /* VONMenuTableViewController.m in Sources */,
 				68855F08198B56E20006A37D /* TFHppleElement.m in Sources */,
 				68855EFF198B55C10006A37D /* VONDinnerMenu.m in Sources */,
+				68A07507198EDD3400109348 /* VONMenuDataProvider.m in Sources */,
 				68CD1AB71989D582002673AD /* VONAppDelegate.m in Sources */,
 				68CD1AB31989D582002673AD /* main.m in Sources */,
 				68855F09198B56E20006A37D /* XPathQuery.m in Sources */,
 				68855F07198B56E20006A37D /* TFHpple.m in Sources */,
 				68C02FE8198A118100D9D7D8 /* VONTrolleyData.m in Sources */,
 				68CD1ABD1989D582002673AD /* VONFirstViewController.m in Sources */,
+				68A0750A198F07CD00109348 /* VONMenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,7 +8,14 @@
 
 #import "VONMenuTableViewController.h"
 #import "TFHpple.h"
+#import "VONMenuDataProvider.h"
 @interface VONMenuTableViewController ()
+
+@property (strong, nonatomic) NSArray *menu;
+@property (strong, nonatomic) NSArray *westMenu;
+@property (strong, nonatomic) NSArray *upperMenu;
+
+- (IBAction)diningHallSC:(UISegmentedControl *)sender;
 
 @end
 
@@ -33,6 +40,10 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
+    NSURL *menuURL = [NSURL URLWithString:[VONMenuDataProvider getUpperDiningHallURL]];
+    NSData  * data      = [NSData dataWithContentsOfURL:menuURL];
+    TFHpple * doc       = [[TFHpple alloc] initWithHTMLData:data];
+    self.menu  = [doc searchWithXPathQuery:@"//td[@id='tuesday']/table[@class='dayinner']/tr[@class='din']/td[@class='menuitem']/div[@class='menuitem']/span[@class='ul']"];
 
 }
 
@@ -41,6 +52,23 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+//- (IBAction)diningHallSC:(UISegmentedControl *)sender {
+//    switch (((UISegmentedControl *) sender).selectedSegmentIndex) {
+//        case 0:
+//            self.trolleyMapView.mapType = MKMapTypeStandard;
+//            break;
+//        case 1:
+//            self.trolleyMapView.mapType = MKMapTypeSatellite;
+//            break;
+//        case 2:
+//            self.trolleyMapView.mapType = MKMapTypeHybrid;
+//            break;
+//        default:
+//            break;
+//    }
+//
+//}
 
 #pragma mark - Table view data source
 
@@ -53,7 +81,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 0;
+    return [self.menu count];
 }
 
 
@@ -63,12 +91,8 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-        NSURL *menuURL = [NSURL URLWithString:@"http://www.uniondining.com/WeeklyMenu_182.htm"];
-    NSData  * data      = [NSData dataWithContentsOfURL:menuURL];
-    TFHpple * doc       = [[TFHpple alloc] initWithHTMLData:data];
-    NSArray *elements  = [doc searchWithXPathQuery:@"//td[@id='tuesday']/table[@class='dayinner']/tr[@class='din']/td[@class='menuitem']/div[@class='menuitem']/span[@class='ul']"];
-    
-    TFHppleElement * element = [elements objectAtIndex:indexPath.row];
+
+    TFHppleElement * element = [self.menu objectAtIndex:indexPath.row];
 
 //    for (TFHppleElement *node in elements) {
 //        NSLog(@"%@", [node text]);
@@ -127,5 +151,6 @@
     // Pass the selected object to the new view controller.
 }
 */
+
 
 @end

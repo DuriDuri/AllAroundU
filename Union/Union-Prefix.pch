@@ -16,3 +16,5 @@
 #endif
 
 #define TROLLEY_URL "http://trolley.union.edu"
+#define DINING_MENU_URL "http://www.uniondining.com/menus.html"
+#define ROOT_DINING_URL "http://www.uniondining.com/"
