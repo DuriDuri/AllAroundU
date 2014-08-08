@@ -7,7 +7,20 @@
 //
 
 #import "VONDinnerMenu.h"
-
+#import "TFHpple.h"
 @implementation VONDinnerMenu
+
++(NSArray *)getMenu:(NSString *)dinerURL
+{
+    NSURL *menuURL = [NSURL URLWithString:dinerURL];
+    NSData  * data      = [NSData dataWithContentsOfURL:menuURL];
+    TFHpple * doc       = [[TFHpple alloc] initWithHTMLData:data];
+    NSArray *menu = [doc searchWithXPathQuery:@"//td[@id='tuesday']/table[@class='dayinner']/tr[@class='din']/td[@class='menuitem']/div[@class='menuitem']/span[@class='ul']"];
+    if (!menu)  return nil;
+    else return menu;
+    
+}
+
+
 
 @end

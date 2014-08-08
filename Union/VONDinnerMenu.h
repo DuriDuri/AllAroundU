@@ -10,4 +10,7 @@
 
 @interface VONDinnerMenu : NSObject
 
++(NSArray *)getMenu:(NSString *)dinerURL;
+
+
 @end
