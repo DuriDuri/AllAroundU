@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VONMenu.h"
 
-@interface VONMenuViewController : UIViewController
+@interface VONMenuViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+
+
 
 @end

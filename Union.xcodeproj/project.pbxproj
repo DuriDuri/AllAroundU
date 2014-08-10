@@ -15,7 +15,6 @@
 		68855F09198B56E20006A37D /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 68855F06198B56E20006A37D /* XPathQuery.m */; };
 		68855F0D198B5C450006A37D /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 68855F0C198B5C450006A37D /* libxml2.dylib */; };
 		68A07507198EDD3400109348 /* VONMenuDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A07506198EDD3400109348 /* VONMenuDataProvider.m */; };
-		68A0750A198F07CD00109348 /* VONMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A07509198F07CD00109348 /* VONMenuViewController.m */; };
 		68A0750E198FA66100109348 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A0750D198FA66100109348 /* Reachability.m */; };
 		68A07533198FA7F400109348 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 68A07517198FA7F400109348 /* Icon-Small.png */; };
 		68A07534198FA7F400109348 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 68A07518198FA7F400109348 /* Icon-Small@2x.png */; };
@@ -23,6 +22,7 @@
 		68A0753A198FA7F400109348 /* Icon-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 68A0751F198FA7F400109348 /* Icon-40@2x.png */; };
 		68A0753B198FA7F400109348 /* Icon-60.png in Resources */ = {isa = PBXBuildFile; fileRef = 68A07520198FA7F400109348 /* Icon-60.png */; };
 		68A0753C198FA7F400109348 /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 68A07521198FA7F400109348 /* Icon-60@2x.png */; };
+		68AA0B7319965BFA001860BB /* VONMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68AA0B7219965BFA001860BB /* VONMenuViewController.m */; };
 		68C02FE8198A118100D9D7D8 /* VONTrolleyData.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C02FE7198A118100D9D7D8 /* VONTrolleyData.m */; };
 		68CD1AA71989D582002673AD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68CD1AA61989D582002673AD /* Foundation.framework */; };
 		68CD1AA91989D582002673AD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68CD1AA81989D582002673AD /* CoreGraphics.framework */; };
@@ -67,8 +67,6 @@
 		68855F0C198B5C450006A37D /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		68A07505198EDD3400109348 /* VONMenuDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VONMenuDataProvider.h; sourceTree = "<group>"; };
 		68A07506198EDD3400109348 /* VONMenuDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VONMenuDataProvider.m; sourceTree = "<group>"; };
-		68A07508198F07CD00109348 /* VONMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VONMenuViewController.h; sourceTree = "<group>"; };
-		68A07509198F07CD00109348 /* VONMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VONMenuViewController.m; sourceTree = "<group>"; };
 		68A0750C198FA66100109348 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		68A0750D198FA66100109348 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		68A07517198FA7F400109348 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
@@ -77,6 +75,8 @@
 		68A0751F198FA7F400109348 /* Icon-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40@2x.png"; sourceTree = "<group>"; };
 		68A07520198FA7F400109348 /* Icon-60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60.png"; sourceTree = "<group>"; };
 		68A07521198FA7F400109348 /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@2x.png"; sourceTree = "<group>"; };
+		68AA0B7119965BFA001860BB /* VONMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VONMenuViewController.h; sourceTree = "<group>"; };
+		68AA0B7219965BFA001860BB /* VONMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VONMenuViewController.m; sourceTree = "<group>"; };
 		68C02FE6198A118100D9D7D8 /* VONTrolleyData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VONTrolleyData.h; sourceTree = "<group>"; };
 		68C02FE7198A118100D9D7D8 /* VONTrolleyData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VONTrolleyData.m; sourceTree = "<group>"; };
 		68CD1AA31989D582002673AD /* Union.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Union.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -248,8 +248,8 @@
 				68CD1AB81989D582002673AD /* Main.storyboard */,
 				68CD1ABB1989D582002673AD /* VONFirstViewController.h */,
 				68CD1ABC1989D582002673AD /* VONFirstViewController.m */,
-				68A07508198F07CD00109348 /* VONMenuViewController.h */,
-				68A07509198F07CD00109348 /* VONMenuViewController.m */,
+				68AA0B7119965BFA001860BB /* VONMenuViewController.h */,
+				68AA0B7219965BFA001860BB /* VONMenuViewController.m */,
 				68CD1AC11989D583002673AD /* Images.xcassets */,
 				68CD1AAD1989D582002673AD /* Supporting Files */,
 			);
@@ -404,6 +404,7 @@
 			files = (
 				68FF0FFA1992AD3A0077B2BF /* VONMenu.m in Sources */,
 				68855F08198B56E20006A37D /* TFHppleElement.m in Sources */,
+				68AA0B7319965BFA001860BB /* VONMenuViewController.m in Sources */,
 				68855EFF198B55C10006A37D /* VONDinnerMenu.m in Sources */,
 				68A07507198EDD3400109348 /* VONMenuDataProvider.m in Sources */,
 				68A0750E198FA66100109348 /* Reachability.m in Sources */,
@@ -414,7 +415,6 @@
 				68C02FE8198A118100D9D7D8 /* VONTrolleyData.m in Sources */,
 				68FF0FFD1992CB450077B2BF /* VONConstants.m in Sources */,
 				68CD1ABD1989D582002673AD /* VONFirstViewController.m in Sources */,
-				68A0750A198F07CD00109348 /* VONMenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

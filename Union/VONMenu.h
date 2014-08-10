@@ -8,16 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
-@interface VONMenu : NSObject
+@interface VONMenu : NSObject{
+    NSMutableDictionary *menu;
+}
 
-@property (strong, nonatomic) NSMutableDictionary *menu;
-
--(void)getMondayMenu:(NSString *)dinerURL;
--(void)getTuesdayMenu:(NSString *)dinerURL;
--(void)getWednesdayMenu:(NSString *)dinerURL;
--(void)getThursdayMenu:(NSString *)dinerURL;
--(void)getFridayMenu:(NSString *)dinerURL;
--(void)getSaturdayMenu:(NSString *)dinerURL;
--(void)getSundayMenu:(NSString *)dinerURL;
+@property (copy, nonatomic) NSMutableDictionary *menu;
+@property (strong, nonatomic ) NSMutableArray *menuArray;
+@property (strong, nonatomic) NSString *name;
++(NSMutableDictionary *)getMondayMenu:(NSString *)dinerURL;
++(NSMutableDictionary *)getTuesdayMenu:(NSString *)dinerURL;
++(NSMutableDictionary *)getWednesdayMenu:(NSString *)dinerURL;
++(NSMutableDictionary *)getThursdayMenu:(NSString *)dinerURL;
++(NSMutableDictionary *)getFridayMenu:(NSString *)dinerURL;
++(NSMutableDictionary *)getSaturdayMenu:(NSString *)dinerURL;
++(NSMutableDictionary *)getSundayMenu:(NSString *)dinerURL;
 
 @end
