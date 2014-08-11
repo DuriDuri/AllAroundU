@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		68855EF1198A4FCA0006A37D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68855EF0198A4FCA0006A37D /* MapKit.framework */; };
 		68855EFB198B55230006A37D /* as.png in Resources */ = {isa = PBXBuildFile; fileRef = 68855EFA198B55230006A37D /* as.png */; };
-		68855EFF198B55C10006A37D /* VONDinnerMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 68855EFE198B55C10006A37D /* VONDinnerMenu.m */; };
 		68855F07198B56E20006A37D /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = 68855F02198B56E20006A37D /* TFHpple.m */; };
 		68855F08198B56E20006A37D /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 68855F04198B56E20006A37D /* TFHppleElement.m */; };
 		68855F09198B56E20006A37D /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 68855F06198B56E20006A37D /* XPathQuery.m */; };
@@ -55,8 +54,6 @@
 /* Begin PBXFileReference section */
 		68855EF0198A4FCA0006A37D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		68855EFA198B55230006A37D /* as.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = as.png; sourceTree = "<group>"; };
-		68855EFD198B55C10006A37D /* VONDinnerMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VONDinnerMenu.h; sourceTree = "<group>"; };
-		68855EFE198B55C10006A37D /* VONDinnerMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VONDinnerMenu.m; sourceTree = "<group>"; };
 		68855F01198B56E20006A37D /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
 		68855F02198B56E20006A37D /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHpple.m; sourceTree = "<group>"; };
 		68855F03198B56E20006A37D /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHppleElement.h; sourceTree = "<group>"; };
@@ -133,8 +130,6 @@
 		68855EFC198B55A50006A37D /* Campus Menu */ = {
 			isa = PBXGroup;
 			children = (
-				68855EFD198B55C10006A37D /* VONDinnerMenu.h */,
-				68855EFE198B55C10006A37D /* VONDinnerMenu.m */,
 				68A07505198EDD3400109348 /* VONMenuDataProvider.h */,
 				68A07506198EDD3400109348 /* VONMenuDataProvider.m */,
 				68FF0FF81992AD3A0077B2BF /* VONMenu.h */,
@@ -405,7 +400,6 @@
 				68FF0FFA1992AD3A0077B2BF /* VONMenu.m in Sources */,
 				68855F08198B56E20006A37D /* TFHppleElement.m in Sources */,
 				68AA0B7319965BFA001860BB /* VONMenuViewController.m in Sources */,
-				68855EFF198B55C10006A37D /* VONDinnerMenu.m in Sources */,
 				68A07507198EDD3400109348 /* VONMenuDataProvider.m in Sources */,
 				68A0750E198FA66100109348 /* Reachability.m in Sources */,
 				68CD1AB71989D582002673AD /* VONAppDelegate.m in Sources */,

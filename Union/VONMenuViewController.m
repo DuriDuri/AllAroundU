@@ -9,6 +9,9 @@
 #import "VONMenuViewController.h"
 #import "VONMenuDataProvider.h"
 #import "TFHpple.h"
+#import <SystemConfiguration/SystemConfiguration.h>
+#import "Reachability.h"
+
 @interface VONMenuViewController ()
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
@@ -30,6 +33,12 @@
 
 @implementation VONMenuViewController
 
+- (BOOL)connected
+{
+    Reachability *reachability = [Reachability reachabilityForInternetConnection];
+    NetworkStatus networkStatus = [reachability currentReachabilityStatus];
+    return !(networkStatus == NotReachable);
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -44,64 +53,72 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    //TableView instances
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
-    
-    
-    //Calculate the day
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init] ;
-    [dateFormatter setDateFormat:@"EEEE"];
-    self.dayToday = [dateFormatter stringFromDate:[NSDate date]];
-    NSLog(@"%@", self.dayToday);
-    
-    
-    //Determine menu based off day of the week
-    //Make 2 different arrays/dictionarys
-    //Then a switch statement which, depending on the day uses the needed method to state the value of the 2 arrays
-    //remember to save the values ahead of time to prevent slow runtime
-    
-    //Define URL variables
-    self.upperDiningHallURL = [VONMenuDataProvider getUpperDiningHallURL];
-    self.westDiningHallURL = [VONMenuDataProvider getWestDiningHallURL];
-    
-    
-    //Define custom diningHall dictionaries based of DOFTW
-    if ([self.dayToday isEqualToString:@"Monday"]) {
-        self.upperMenu = [VONMenu getMondayMenu:self.upperDiningHallURL];
-        self.westMenu = [VONMenu getMondayMenu:self.westDiningHallURL];
-    }
-    if ([self.dayToday isEqualToString:@"Tuesday"]) {
-        self.upperMenu = [VONMenu getTuesdayMenu:self.upperDiningHallURL];
-        self.westMenu = [VONMenu getTuesdayMenu:self.westDiningHallURL];
-    }
-    if ([self.dayToday isEqualToString:@"Wednesday"]) {
-        self.upperMenu = [VONMenu getWednesdayMenu:self.upperDiningHallURL];
-        self.westMenu = [VONMenu getWednesdayMenu:self.westDiningHallURL];
-    }
-    if ([self.dayToday isEqualToString:@"Thursday"]) {
-        self.upperMenu = [VONMenu getThursdayMenu:self.upperDiningHallURL];
-        self.westMenu = [VONMenu getThursdayMenu:self.westDiningHallURL];
-    }
-    if ([self.dayToday isEqualToString:@"Friday"]) {
-        self.upperMenu = [VONMenu getFridayMenu:self.upperDiningHallURL];
-        self.westMenu = [VONMenu getFridayMenu:self.westDiningHallURL];
-    }
-    if ([self.dayToday isEqualToString:@"Saturday"]) {
-        self.upperMenu = [VONMenu getSaturdayMenu:self.upperDiningHallURL];
-        self.westMenu = [VONMenu getSaturdayMenu:self.westDiningHallURL];
-    }
-    if ([self.dayToday isEqualToString:@"Sunday"]) {
-        self.upperMenu = [VONMenu getSundayMenu:self.upperDiningHallURL];
-        self.westMenu = [VONMenu getSundayMenu:self.westDiningHallURL];
-    }
-    
-    //Initialize todays Menu
-    self.todaysMenu = self.upperMenu;
-
 }
 
-
+-(void)viewWillAppear:(BOOL)animated
+{
+    if (![self connected])
+    {
+        // not connected
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Internet Connection Not Found"
+                                                        message:@"Please check your network settings!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        [alert show];
+    }
+    else
+    {
+        // connected, do some internet stuff
+        
+        //TableView instances
+        self.tableView.delegate = self;
+        self.tableView.dataSource = self;
+        
+        
+        //Calculate the day
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init] ;
+        [dateFormatter setDateFormat:@"EEEE"];
+        self.dayToday = [dateFormatter stringFromDate:[NSDate date]];
+        NSLog(@"%@", self.dayToday);
+        
+        
+        //Define URL variables
+        self.upperDiningHallURL = [VONMenuDataProvider getUpperDiningHallURL];
+        self.westDiningHallURL = [VONMenuDataProvider getWestDiningHallURL];
+        
+        
+        //Define custom diningHall dictionaries based of DOFTW
+        if ([self.dayToday isEqualToString:@"Monday"]) {
+            self.upperMenu = [VONMenu getMondayMenu:self.upperDiningHallURL];
+            self.westMenu = [VONMenu getMondayMenu:self.westDiningHallURL];
+        }
+        if ([self.dayToday isEqualToString:@"Tuesday"]) {
+            self.upperMenu = [VONMenu getTuesdayMenu:self.upperDiningHallURL];
+            self.westMenu = [VONMenu getTuesdayMenu:self.westDiningHallURL];
+        }
+        if ([self.dayToday isEqualToString:@"Wednesday"]) {
+            self.upperMenu = [VONMenu getWednesdayMenu:self.upperDiningHallURL];
+            self.westMenu = [VONMenu getWednesdayMenu:self.westDiningHallURL];
+        }
+        if ([self.dayToday isEqualToString:@"Thursday"]) {
+            self.upperMenu = [VONMenu getThursdayMenu:self.upperDiningHallURL];
+            self.westMenu = [VONMenu getThursdayMenu:self.westDiningHallURL];
+        }
+        if ([self.dayToday isEqualToString:@"Friday"]) {
+            self.upperMenu = [VONMenu getFridayMenu:self.upperDiningHallURL];
+            self.westMenu = [VONMenu getFridayMenu:self.westDiningHallURL];
+        }
+        if ([self.dayToday isEqualToString:@"Saturday"]) {
+            self.upperMenu = [VONMenu getSaturdayMenu:self.upperDiningHallURL];
+            self.westMenu = [VONMenu getSaturdayMenu:self.westDiningHallURL];
+        }
+        if ([self.dayToday isEqualToString:@"Sunday"]) {
+            self.upperMenu = [VONMenu getSundayMenu:self.upperDiningHallURL];
+            self.westMenu = [VONMenu getSundayMenu:self.westDiningHallURL];
+        }
+        
+        //Initialize todays Menu
+        self.todaysMenu = self.upperMenu;
+    }
+}
 
 
 - (void)didReceiveMemoryWarning

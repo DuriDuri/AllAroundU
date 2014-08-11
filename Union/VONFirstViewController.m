@@ -7,7 +7,6 @@
 //
 
 #import "VONFirstViewController.h"
-#import "VONDinnerMenu.h"
 #import "TFHpple.h"
 #import "VONMenuDataProvider.h"
 
