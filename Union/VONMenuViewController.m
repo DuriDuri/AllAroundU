@@ -14,8 +14,18 @@
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 - (IBAction)diningHallSC:(UISegmentedControl *)sender;
 
+//Todays Date
+@property (strong, nonatomic) NSString *dayToday;
+//Selected Menu
 @property (strong, nonatomic) NSMutableDictionary *todaysMenu;
-@property (strong, nonatomic) NSString *diningHallURL;
+//Menu Options
+@property (strong, nonatomic) NSMutableDictionary *upperMenu;
+@property (strong, nonatomic) NSMutableDictionary *westMenu;
+
+//Menu Options
+@property (strong, nonatomic) NSString *upperDiningHallURL;
+@property (strong, nonatomic) NSString *westDiningHallURL;
+
 @end
 
 @implementation VONMenuViewController
@@ -39,15 +49,58 @@
     self.tableView.dataSource = self;
     
     
+    //Calculate the day
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init] ;
+    [dateFormatter setDateFormat:@"EEEE"];
+    self.dayToday = [dateFormatter stringFromDate:[NSDate date]];
+    NSLog(@"%@", self.dayToday);
+    
+    
+    //Determine menu based off day of the week
+    //Make 2 different arrays/dictionarys
+    //Then a switch statement which, depending on the day uses the needed method to state the value of the 2 arrays
+    //remember to save the values ahead of time to prevent slow runtime
+    
+    //Define URL variables
+    self.upperDiningHallURL = [VONMenuDataProvider getUpperDiningHallURL];
+    self.westDiningHallURL = [VONMenuDataProvider getWestDiningHallURL];
+    
+    
+    //Define custom diningHall dictionaries based of DOFTW
+    if ([self.dayToday isEqualToString:@"Monday"]) {
+        self.upperMenu = [VONMenu getMondayMenu:self.upperDiningHallURL];
+        self.westMenu = [VONMenu getMondayMenu:self.westDiningHallURL];
+    }
+    if ([self.dayToday isEqualToString:@"Tuesday"]) {
+        self.upperMenu = [VONMenu getTuesdayMenu:self.upperDiningHallURL];
+        self.westMenu = [VONMenu getTuesdayMenu:self.westDiningHallURL];
+    }
+    if ([self.dayToday isEqualToString:@"Wednesday"]) {
+        self.upperMenu = [VONMenu getWednesdayMenu:self.upperDiningHallURL];
+        self.westMenu = [VONMenu getWednesdayMenu:self.westDiningHallURL];
+    }
+    if ([self.dayToday isEqualToString:@"Thursday"]) {
+        self.upperMenu = [VONMenu getThursdayMenu:self.upperDiningHallURL];
+        self.westMenu = [VONMenu getThursdayMenu:self.westDiningHallURL];
+    }
+    if ([self.dayToday isEqualToString:@"Friday"]) {
+        self.upperMenu = [VONMenu getFridayMenu:self.upperDiningHallURL];
+        self.westMenu = [VONMenu getFridayMenu:self.westDiningHallURL];
+    }
+    if ([self.dayToday isEqualToString:@"Saturday"]) {
+        self.upperMenu = [VONMenu getSaturdayMenu:self.upperDiningHallURL];
+        self.westMenu = [VONMenu getSaturdayMenu:self.westDiningHallURL];
+    }
+    if ([self.dayToday isEqualToString:@"Sunday"]) {
+        self.upperMenu = [VONMenu getSundayMenu:self.upperDiningHallURL];
+        self.westMenu = [VONMenu getSundayMenu:self.westDiningHallURL];
+    }
+    
     //Initialize todays Menu
-    
-    self.diningHallURL = [VONMenuDataProvider getUpperDiningHallURL];
-    
-    self.todaysMenu = [VONMenu getMondayMenu:self.diningHallURL];
-    //NSLog(@"%@", self.todaysMenu);
-   // NSLog(@"Mondays Menu: Breakfast %@ ", self.todaysMenu.menu);
-   // [self getMondayMenu:[VONMenuDataProvider getWestDiningHallURL]];
+    self.todaysMenu = self.upperMenu;
+
 }
+
 
 
 
@@ -110,28 +163,17 @@
 }
 */
 
--(void)getMondayMenu:(NSString *)dinerURL{
-    NSURL *menuURL = [NSURL URLWithString:dinerURL];
-    NSData  * data      = [NSData dataWithContentsOfURL:menuURL];
-    TFHpple * doc       = [[TFHpple alloc] initWithHTMLData:data];
-    NSArray *breakfastMenu = [doc searchWithXPathQuery:@"//td[@id='monday']/table[@class='dayinner']/tr[@class='brk']/td[@class='menuitem']/div[@class='menuitem']/span[@class='ul']"];
-    NSArray *lunchMenu = [doc searchWithXPathQuery:@"//td[@id='monday']/table[@class='dayinner']/tr[@class='lun']/td[@class='menuitem']/div[@class='menuitem']/span[@class='ul']"];
-    NSArray *dinnerMenu = [doc searchWithXPathQuery:@"//td[@id='monday']/table[@class='dayinner']/tr[@class='din']/td[@class='menuitem']/div[@class='menuitem']/span[@class='ul']"];
-    
-    if (breakfastMenu) NSLog(@"Breakfast is %@" , breakfastMenu);
-    if (lunchMenu)  NSLog(@" \n Lunch is %@", lunchMenu) ;
-    if (dinnerMenu) NSLog(@"  \n Dinner is%@", dinnerMenu);
-}
+
 
 
 - (IBAction)diningHallSC:(UISegmentedControl *)sender {
     switch (((UISegmentedControl *) sender).selectedSegmentIndex) {
         case 0:
-            self.diningHallURL = [VONMenuDataProvider getWestDiningHallURL];
+            self.todaysMenu = self.upperMenu;
             [self.tableView reloadData];
             break;
         case 1:
-           self.diningHallURL = [VONMenuDataProvider getUpperDiningHallURL];
+            self.todaysMenu = self.westMenu;
             [self.tableView reloadData];
             break;
         default:
