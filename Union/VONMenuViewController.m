@@ -16,6 +16,7 @@
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 - (IBAction)diningHallSC:(UISegmentedControl *)sender;
+- (IBAction)refreshBarButtonPressed:(UIBarButtonItem *)sender;
 
 //Todays Date
 @property (strong, nonatomic) NSString *dayToday;
@@ -53,10 +54,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-}
-
--(void)viewWillAppear:(BOOL)animated
-{
+    
     if (![self connected])
     {
         // not connected
@@ -118,7 +116,10 @@
         //Initialize todays Menu
         self.todaysMenu = self.upperMenu;
     }
+
 }
+
+
 
 
 - (void)didReceiveMemoryWarning
@@ -196,5 +197,9 @@
         default:
             break;
     }
+}
+
+- (IBAction)refreshBarButtonPressed:(UIBarButtonItem *)sender {
+    [self viewDidLoad];
 }
 @end
