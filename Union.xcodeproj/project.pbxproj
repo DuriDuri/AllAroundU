@@ -13,7 +13,12 @@
 		68855F08198B56E20006A37D /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 68855F04198B56E20006A37D /* TFHppleElement.m */; };
 		68855F09198B56E20006A37D /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 68855F06198B56E20006A37D /* XPathQuery.m */; };
 		68855F0D198B5C450006A37D /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 68855F0C198B5C450006A37D /* libxml2.dylib */; };
-		689BA91E199991F00015069B /* 32x32-ios7-reload-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 689BA91D199991F00015069B /* 32x32-ios7-reload-icon.png */; };
+		689BA9221999A07D0015069B /* trolley-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 689BA9211999A07D0015069B /* trolley-32.png */; };
+		689BA9261999A24D0015069B /* restaurant-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 689BA9251999A24D0015069B /* restaurant-32.png */; };
+		689BA92A1999A54B0015069B /* trolley-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 689BA9291999A54B0015069B /* trolley-50@2x.png */; };
+		689BA92E1999A64E0015069B /* restaurant-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 689BA92D1999A64E0015069B /* restaurant-50@2x.png */; };
+		689BA9321999A79C0015069B /* reload-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 689BA9311999A79C0015069B /* reload-50@2x.png */; };
+		689BA9341999A7B30015069B /* reload-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 689BA9331999A7B30015069B /* reload-32.png */; };
 		68A07507198EDD3400109348 /* VONMenuDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A07506198EDD3400109348 /* VONMenuDataProvider.m */; };
 		68A0750E198FA66100109348 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A0750D198FA66100109348 /* Reachability.m */; };
 		68A07533198FA7F400109348 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 68A07517198FA7F400109348 /* Icon-Small.png */; };
@@ -63,7 +68,12 @@
 		68855F06198B56E20006A37D /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
 		68855F0A198B57700006A37D /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
 		68855F0C198B5C450006A37D /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
-		689BA91D199991F00015069B /* 32x32-ios7-reload-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "32x32-ios7-reload-icon.png"; sourceTree = "<group>"; };
+		689BA9211999A07D0015069B /* trolley-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trolley-32.png"; sourceTree = "<group>"; };
+		689BA9251999A24D0015069B /* restaurant-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "restaurant-32.png"; sourceTree = "<group>"; };
+		689BA9291999A54B0015069B /* trolley-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trolley-50@2x.png"; sourceTree = "<group>"; };
+		689BA92D1999A64E0015069B /* restaurant-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "restaurant-50@2x.png"; sourceTree = "<group>"; };
+		689BA9311999A79C0015069B /* reload-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reload-50@2x.png"; sourceTree = "<group>"; };
+		689BA9331999A7B30015069B /* reload-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reload-32.png"; sourceTree = "<group>"; };
 		68A07505198EDD3400109348 /* VONMenuDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VONMenuDataProvider.h; sourceTree = "<group>"; };
 		68A07506198EDD3400109348 /* VONMenuDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VONMenuDataProvider.m; sourceTree = "<group>"; };
 		68A0750C198FA66100109348 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
@@ -256,7 +266,12 @@
 		68CD1AAD1989D582002673AD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				689BA91D199991F00015069B /* 32x32-ios7-reload-icon.png */,
+				689BA9331999A7B30015069B /* reload-32.png */,
+				689BA9311999A79C0015069B /* reload-50@2x.png */,
+				689BA92D1999A64E0015069B /* restaurant-50@2x.png */,
+				689BA9291999A54B0015069B /* trolley-50@2x.png */,
+				689BA9251999A24D0015069B /* restaurant-32.png */,
+				689BA9211999A07D0015069B /* trolley-32.png */,
 				68A0750F198FA7F400109348 /* appicon */,
 				68855EFA198B55230006A37D /* as.png */,
 				68CD1AAE1989D582002673AD /* Union-Info.plist */,
@@ -379,9 +394,14 @@
 				68855EFB198B55230006A37D /* as.png in Resources */,
 				68A0753C198FA7F400109348 /* Icon-60@2x.png in Resources */,
 				68CD1AB11989D582002673AD /* InfoPlist.strings in Resources */,
+				689BA92A1999A54B0015069B /* trolley-50@2x.png in Resources */,
+				689BA92E1999A64E0015069B /* restaurant-50@2x.png in Resources */,
 				68CD1ABA1989D582002673AD /* Main.storyboard in Resources */,
-				689BA91E199991F00015069B /* 32x32-ios7-reload-icon.png in Resources */,
+				689BA9321999A79C0015069B /* reload-50@2x.png in Resources */,
 				68A07534198FA7F400109348 /* Icon-Small@2x.png in Resources */,
+				689BA9221999A07D0015069B /* trolley-32.png in Resources */,
+				689BA9341999A7B30015069B /* reload-32.png in Resources */,
+				689BA9261999A24D0015069B /* restaurant-32.png in Resources */,
 				68A07539198FA7F400109348 /* Icon-40.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

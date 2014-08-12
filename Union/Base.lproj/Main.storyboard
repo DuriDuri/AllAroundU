@@ -49,7 +49,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Trolley" image="first" id="u1e-5L-l1D"/>
+                    <tabBarItem key="tabBarItem" title="Campus Trolley" image="Trolley" id="u1e-5L-l1D"/>
                     <connections>
                         <outlet property="terainSegmentedControl" destination="8eN-7k-T4O" id="VZl-04-yBQ"/>
                         <outlet property="trolleyMapView" destination="EG3-UU-Fa4" id="GEk-ep-9re"/>
@@ -68,6 +68,8 @@
                         <rect key="frame" x="0.0" y="431" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.54509806630000002" green="0.0" blue="0.02745098248" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="selectedImageTintColor" red="1" green="0.82352948189999997" blue="0.38823533059999998" alpha="1" colorSpace="deviceRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="CZ4-MO-1fc" kind="relationship" relationship="viewControllers" id="SUk-Ux-ee1"/>
@@ -111,14 +113,14 @@
                                 <color key="sectionIndexColor" red="0.54509806630000002" green="0.0" blue="0.02745098248" alpha="1" colorSpace="deviceRGB"/>
                                 <color key="sectionIndexTrackingBackgroundColor" red="0.54509806630000002" green="0.0" blue="0.02745098248" alpha="1" colorSpace="deviceRGB"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="4nR-QI-WLe" style="IBUITableViewCellStyleDefault" id="Llq-TR-7zl">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="5xd-cD-mtI" style="IBUITableViewCellStyleDefault" id="Llq-TR-7zl">
                                         <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Llq-TR-7zl" id="BJX-Rj-jbU">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4nR-QI-WLe">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5xd-cD-mtI">
                                                     <rect key="frame" x="15" y="0.0" width="290" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -134,7 +136,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Campus Menu" id="LaE-a7-LC7">
-                        <barButtonItem key="rightBarButtonItem" image="32x32-ios7-reload-icon.png" id="bdQ-1z-M4s">
+                        <barButtonItem key="rightBarButtonItem" image="Reload" id="bdQ-1z-M4s">
                             <color key="tintColor" red="0.54509806630000002" green="0.0" blue="0.02745098248" alpha="1" colorSpace="deviceRGB"/>
                             <connections>
                                 <action selector="refreshBarButtonPressed:" destination="ckr-yS-obf" id="3CY-fZ-Ed6"/>
@@ -153,7 +155,7 @@
         <scene sceneID="0QN-on-6uz">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zEn-gi-8gc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Menu" image="second" id="F0o-tQ-aaE"/>
+                    <tabBarItem key="tabBarItem" title="Menu" image="Menu" id="F0o-tQ-aaE"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="yV0-Uy-GJy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -170,10 +172,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="32x32-ios7-reload-icon.png" width="32" height="32"/>
+        <image name="Menu" width="32" height="32"/>
+        <image name="Reload" width="32" height="32"/>
+        <image name="Trolley" width="25" height="25"/>
         <image name="as.png" width="44" height="44"/>
-        <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
     </resources>
     <color key="tintColor" red="0.54509806630000002" green="0.0" blue="0.02745098248" alpha="1" colorSpace="deviceRGB"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
