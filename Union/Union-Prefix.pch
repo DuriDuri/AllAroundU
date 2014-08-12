@@ -19,3 +19,4 @@
 #define TROLLEY_URL "http://trolley.union.edu"
 #define DINING_MENU_URL "http://www.uniondining.com/menus.html"
 #define ROOT_DINING_URL "http://www.uniondining.com/"
+#define LAUNDRY_URL "http://www.laundryview.com/lvs.php?s=340"

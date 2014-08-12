@@ -10,4 +10,6 @@
 
 @interface VONLaundryRoomFactory : NSObject
 
++(NSMutableDictionary *)laundryRooms;
+
 @end

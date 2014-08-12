@@ -9,6 +9,7 @@
 #import "VONFirstViewController.h"
 #import "TFHpple.h"
 #import "VONMenuDataProvider.h"
+#import "VONLaundryDataProvider.h"
 
 @interface VONFirstViewController ()
 
@@ -35,19 +36,26 @@
     ///// UNCOMMENT LATER
     
     //Set Map Region
-    MKCoordinateRegion region = { {0.0, 0.0}, {0.0,0.0}};
-    region.center.latitude = 42.817743;
-    region.center.longitude = -73.930522;
-    region.span.latitudeDelta = 0.018f;
-    region.span.longitudeDelta = 0.018f;
-
-    [self.trolleyMapView setRegion:region animated:YES];
+//    MKCoordinateRegion region = { {0.0, 0.0}, {0.0,0.0}};
+//    region.center.latitude = 42.817743;
+//    region.center.longitude = -73.930522;
+//    region.span.latitudeDelta = 0.018f;
+//    region.span.longitudeDelta = 0.018f;
+//
+//    [self.trolleyMapView setRegion:region animated:YES];
+//
+//    
+//    [self.trolleyMapView.delegate self];
+//    
+//    [self.trolleyMapView setShowsUserLocation:YES];
 
     
-    [self.trolleyMapView.delegate self];
+    //Laundry TEST
     
-    [self.trolleyMapView setShowsUserLocation:YES];
-
+    //@"http://classic.laundryview.com/laundry_room.php?lr=1640226"
+    
+    NSMutableDictionary *TEST = [VONLaundryDataProvider getLaundryData:@"http://classic.laundryview.com/laundry_room.php?lr=1640230"];
+    NSLog(@"%@", TEST);
 
 
 ///div[@class='menuitem']/span[@class='ul']
