@@ -7,8 +7,16 @@
 //
 
 #import "VONLaundryViewController.h"
+#import "VONLaundryDataProvider.h"
+#import "VONLaundryRoomFactory.h"
+#include "VONLaundryDetailViewController.m"
 
 @interface VONLaundryViewController ()
+
+@property (strong, nonatomic) IBOutlet UITableView *tableview;
+@property (strong, nonatomic) NSMutableDictionary *laundryRoomFactory;
+
+@property (strong, nonatomic) NSMutableArray *laundryRooms;
 
 @end
 
@@ -27,6 +35,14 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.tableview.delegate = self;
+    self.tableview.dataSource = self;
+    
+    
+    
+    self.laundryRoomFactory = [VONLaundryRoomFactory laundryRooms];
+    self.laundryRooms = [[self.laundryRoomFactory allKeys]mutableCopy];
+    NSLog(@"%@", self.laundryRooms);
 }
 
 - (void)didReceiveMemoryWarning
@@ -39,55 +55,49 @@
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 3;
+    return 1;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellIdentifier = @"Cell";
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
-    
-    if (indexPath.section ==0){
-        TFHppleElement *meal = [self.todaysMenu objectForKey:kVONBreakfastKey][indexPath.row];
-        cell.textLabel.text =[meal text];
-    }
-    if (indexPath.section ==1) cell.textLabel.text =[[self.todaysMenu objectForKey:kVONLunchKey][indexPath.row] text];
-    if (indexPath.section ==2) cell.textLabel.text =[[self.todaysMenu objectForKey:kVONDinnerKey][indexPath.row] text];
-    
+    UITableViewCell *cell = [self.tableview dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    cell.textLabel.text = [self.laundryRooms objectAtIndex:indexPath.row ];
     
     return cell;
     
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [self performSegueWithIdentifier:@"toLaundryDetailVC" sender:indexPath];
+}
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (section == 0) return [[self.todaysMenu objectForKey:kVONBreakfastKey] count];
-    if (section == 1) return [[self.todaysMenu objectForKey:kVONLunchKey] count];
-    if (section == 2) return [[self.todaysMenu objectForKey:kVONDinnerKey] count];
-    return 15;
-}
-
--(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-    if (section == 0 && [[self.todaysMenu objectForKey:kVONBreakfastKey] count] ) return @"BreakFast";
-    if (section == 1 && [[self.todaysMenu objectForKey:kVONLunchKey] count]) return @"Lunch";
-    if (section == 2 && [[self.todaysMenu objectForKey:kVONDinnerKey] count]) return @"Dinner";
-    else return @"";
+    return [self.laundryRooms count];
 }
 
 
 
 
-/*
+
 #pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([sender isKindOfClass:[UITableViewCell class]]) {
+        if ([segue.identifier isEqualToString:@"toLaundryDetailVC"]) {
+            VONLaundryDetailViewController *detailedLaundryRoomVC = segue.destinationViewController;
+            NSIndexPath *path = [self.tableview indexPathForCell:sender];
+            NSString *laundryRoomFactoryKey = [self.laundryRooms objectAtIndex:path.row];
+            NSString *url = [self.laundryRoomFactory objectForKey:laundryRoomFactoryKey];
+            detailedLaundryRoomVC.detailedLaundryRoomURL = url;
+            NSLog(@"The key is %@ and the url is %@", laundryRoomFactoryKey, url);
+        }
+
+    }
 }
-*/
+
 
 @end

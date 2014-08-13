@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VONLaundryDetailViewController : UIViewController
+@interface VONLaundryDetailViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+
+
+
+
+
+@property (strong, nonatomic) NSString *detailedLaundryRoomURL;
+
 
 @end

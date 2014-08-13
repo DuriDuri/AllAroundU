@@ -9,6 +9,8 @@
 #import "VONLaundryDetailViewController.h"
 
 @interface VONLaundryDetailViewController ()
+@property (strong, nonatomic) IBOutlet UITableView *washerTableView;
+@property (strong, nonatomic) IBOutlet UITableView *dryerTableView;
 
 @end
 
@@ -27,6 +29,13 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.washerTableView.delegate = self;
+    self.washerTableView.dataSource = self;
+    
+    self.dryerTableView.delegate = self;
+    self.dryerTableView.dataSource = self;
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -34,6 +43,33 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - TableView DataSource methods
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *cellIdentifier = @"Cell";
+    UITableViewCell *cell = [self.washerTableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    cell.textLabel.text = @"Duri";
+    
+    return cell;
+    
+}
+
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 10;
+}
+
+
+
+
 
 /*
 #pragma mark - Navigation
